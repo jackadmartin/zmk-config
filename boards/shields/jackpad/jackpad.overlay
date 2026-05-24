@@ -1,0 +1,22 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "row2col";
+
+        row-gpios
+            = <&gpio1 6 GPIO_ACTIVE_LOW>
+            , <&gpio0 11 GPIO_ACTIVE_LOW>
+            , <&gpio0 24 GPIO_ACTIVE_LOW>
+            ;
+
+        col-gpios
+            = <&gpio0 9 GPIO_ACTIVE_LOW>
+            , <&gpio1 11 GPIO_ACTIVE_LOW>
+            , <&gpio1 15 GPIO_ACTIVE_LOW>
+            ;
+    };
+};
